@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'CoreBluetoothExtension'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of CoreBluetoothExtension.'
+  s.summary          = 'A simple Extension for CoreBluetooth.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+    A simple Extension of CoreBluetooth.
                        DESC
 
   s.homepage         = 'https://github.com/itanchao/CoreBluetoothExtension'
