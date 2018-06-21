@@ -1,15 +1,15 @@
 {
   "name": "CoreBluetoothExtension",
   "version": "0.1.0",
-  "summary": "A short description of CoreBluetoothExtension.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "A simple Extension for CoreBluetooth.",
+  "description": "A simple Extension of CoreBluetooth.",
   "homepage": "https://github.com/itanchao/CoreBluetoothExtension",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "itanchao": "tanchao@mobike.com"
+    "itanchao": "itanchao@gmail.com"
   },
   "source": {
     "git": "https://github.com/itanchao/CoreBluetoothExtension.git",
@@ -18,9 +18,9 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CoreBluetoothExtension/**/*",
-  "public_header_files": "MobikeCoreBluetooth/Public/{*.h}",
-  "private_header_files": "MobikeCoreBluetooth/Private/{*.h}",
+  "source_files": "CoreBluetoothExtension/Class/**/*{.h,.m}",
+  "public_header_files": "MobikeCoreBluetooth/Class/Public/**/*.h",
+  "private_header_files": "MobikeCoreBluetooth/Class/Private/**/*.h",
   "dependencies": {
     "ReactiveObjC": [
 

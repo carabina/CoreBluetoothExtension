@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'CoreBluetoothExtension/**/*'
-  s.public_header_files = 'MobikeCoreBluetooth/Public/{*.h}'
-  s.private_header_files = 'MobikeCoreBluetooth/Private/{*.h}'
+s.source_files = 'CoreBluetoothExtension/Class/**/*{.h,.m}'
+  s.public_header_files = 'MobikeCoreBluetooth/Class/Public/**/*.h'
+  s.private_header_files = 'MobikeCoreBluetooth/Class/Private/**/*.h'
   s.dependency 'ReactiveObjC'
 end
