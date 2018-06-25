@@ -22,7 +22,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CoreBluetoothExtension: 762ec95a793f5c3121439b58aa9ff2a21fb6f9ce
+  CoreBluetoothExtension: ea666d29a5da4386b88205cf2b66b2344613e413
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
 

@@ -10,13 +10,6 @@
 #endif
 #endif
 
-#import "CBCentralManager+Private.h"
-#import "CBCentralManagerDelegate.h"
-#import "CBCharacteristic+Private.h"
-#import "CBPeripheral+Private.h"
-#import "CBPeripheralDelegate.h"
-#import "CBService+Private.h"
-#import "WeakObject.h"
 #import "CBCentralManager+Public.h"
 #import "CBCharacteristic+Public.h"
 #import "CBPeripheral+Public.h"

@@ -64,13 +64,18 @@
             [inner_disposer dispose];
         }];
     }] subscribeNext:^(id  _Nullable x) {
+        
         @strongify(durationTimer)
+        @strongify(self)
+        [self setScanResultClosure:nil];
         if (durationTimer) {
             [durationTimer invalidate];
             durationTimer = nil;
         }
         if (complete) {
-            complete();
+            dispatch_async(dispatch_get_main_queue(), ^{
+                complete();
+            });
         }
     }];
     return self;
