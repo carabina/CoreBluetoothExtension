@@ -16,7 +16,7 @@
 + (instancetype)newCentral{
      return [[self alloc] initWithDelegate:CBCentralManagerDelegate.sharedDelegate queue:dispatch_queue_create("com.MobikeCoreBluetooth.queue.ble", DISPATCH_QUEUE_SERIAL)];
 }
-- (nonnull CBCentralManager *)scanForPeripheralsWithDuration:(NSTimeInterval)duration responseBlock:(void (^)(CBPeripheral *, NSDictionary<NSString *,id> *, NSNumber *, NSError *))responseBlock complete:(void (^)(void))complete{
+- (CBCentralManager *)scanForPeripheralsWithServices:(NSArray<CBUUID *> *)serviceUUIDs options:(NSDictionary<NSString *,id> *)options duration:(NSTimeInterval)duration responseBlock:(void (^)(CBPeripheral *, NSDictionary<NSString *,id> *, NSNumber *, NSError *))responseBlock complete:(void (^)(void))complete{
     // 设置代理
     self.delegate = CBCentralManagerDelegate.sharedDelegate;
     // 设置回调
@@ -42,7 +42,7 @@
         }];
     }] subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        [self scanForPeripheralsWithServices:nil options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@YES}];
+        [self scanForPeripheralsWithServices:serviceUUIDs options:options];
     }];
     // 手动调用一下触发扫描
     [self.delegate centralManagerDidUpdateState:self];

@@ -11,17 +11,31 @@
 // new一个蓝牙中心
 + (nonnull instancetype)newCentral NS_SWIFT_NAME(newCentral());
 
-/**
- 扫描附近蓝牙外设
- 
- @param duration 扫描时间
- @param responseBlock 扫描回调
- @param complete 结束回调
- @return 蓝牙中心
+/*!
+ *  @method scanForPeripheralsWithServices:options:duration:responseBlock:complete:
+ *
+ *  @param serviceUUIDs A list of <code>CBUUID</code> objects representing the service(s) to scan for.
+ *  @param options      An optional dictionary specifying options for the scan.
+ *  @param duration     a duration for timeout
+ *  @param responseBlock a closure for scan operation block
+ *  @param complete a closure for scan complete block
+ *
+ *  @discussion         Starts scanning for peripherals that are advertising any of the services listed in <i>serviceUUIDs</i>. Although strongly discouraged,
+ *                      if <i>serviceUUIDs</i> is <i>nil</i> all discovered peripherals will be returned. If the central is already scanning with different
+ *                      <i>serviceUUIDs</i> or <i>options</i>, the provided parameters will replace them.
+ *                      Applications that have specified the <code>bluetooth-central</code> background mode are allowed to scan while backgrounded, with two
+ *                      caveats: the scan must specify one or more service types in <i>serviceUUIDs</i>, and the <code>CBCentralManagerScanOptionAllowDuplicatesKey</code>
+ *                      scan option will be ignored.
+ *
+ *  @seealso            CBCentralManagerScanOptionAllowDuplicatesKey
+ *    @seealso            CBCentralManagerScanOptionSolicitedServiceUUIDsKey
+ *
  */
-- (nonnull CBCentralManager *)scanForPeripheralsWithDuration:(NSTimeInterval) duration
-                                       responseBlock:(void(^)(CBPeripheral *peripheral,NSDictionary<NSString *, id> * advertisementData,NSNumber *RSSI,NSError *error))responseBlock complete:(void(^)(void))complete;
-
+- (nonnull CBCentralManager *)scanForPeripheralsWithServices:(nullable NSArray<CBUUID *> *)serviceUUIDs
+                                                     options:(nullable NSDictionary<NSString *,id> *)options
+                                                    duration:(NSTimeInterval)duration
+                                               responseBlock:(void (^)(CBPeripheral *, NSDictionary<NSString *,id> *, NSNumber *, NSError *))responseBlock
+                                                    complete:(void (^)(void))complete;
 /*!
  *  @method connectPeripheral:options:
  *
